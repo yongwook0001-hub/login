@@ -17,5 +17,16 @@ function login(){
         id: id.value,
         psword: psword.value,
     };
+    
+    //프런트에서 서버로 전달하기
     console.log(req);
+    console.log(JSON.stringify(req));
+
+    fetch("/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(req)
+    })
 }
