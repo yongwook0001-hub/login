@@ -15,7 +15,7 @@ loginBtn.addEventListener("click", login);
 function login(){
     const req = {
         id: id.value,
-        psword: psword.value,
+        psword: password.value,
     };
     
     //프런트에서 서버로 전달하기

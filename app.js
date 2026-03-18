@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyparser = require('body-parser');
 
 const app = express();
 
@@ -17,7 +18,8 @@ app.set('views', './src/views'); //views 폴더를 템플릿 폴더로 지정
 app.set('view engine', 'ejs'); //템플릿 엔진을 ejs로 지정
 
 app.use(express.static(`${__dirname}/src/public`)); //정적 파일을 제공하는 미들웨어, src/public 폴더를 정적 파일이 있는 폴더로 지정
-
+app.use(bodyparser.json()); //JSON 형태의 요청 본문을 파싱하는 미들웨어
+app.use(bodyparser.urlencoded({extended: true})); //URL-encoded 형태의 요청 본문을 파싱하는 미들웨어, extended 옵션을 true로 설정하여 중첩된 객체를 허용
 
 app.use("/", home); //미들 웨어를 등록해주는 메소드
 
