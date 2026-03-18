@@ -19,7 +19,6 @@ app.set('view engine', 'ejs'); //템플릿 엔진을 ejs로 지정
 app.use(express.static(`${__dirname}/src/public`)); //정적 파일을 제공하는 미들웨어, src/public 폴더를 정적 파일이 있는 폴더로 지정
 
 
-
 app.use("/", home); //미들 웨어를 등록해주는 메소드
 
 
