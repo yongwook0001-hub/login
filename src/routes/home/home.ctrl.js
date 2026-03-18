@@ -5,7 +5,7 @@ const home = (req, res) => {
 }
 
 const login = (req, res) => {
-    res.render('home/login'); //views 폴더의 home 폴더의 login.ejs 파일을 렌더링
+res.render('home/login'); //views 폴더의 home 폴더의 login.ejs 파일을 렌더링
 }
 
 module.exports = {
